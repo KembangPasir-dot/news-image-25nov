@@ -1,4 +1,8 @@
+# Local build scaffolding and submission bundle artifacts (not committed).
 out/
 __pycache__/
 *.pyc
 render/
+transcripts.tar.gz
+muse-usage.jsonl
+prompt.txt

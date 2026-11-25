@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261125/KembangPasir-dot/news-image-25nov/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 [![reward](https://make.fun/badge/news-image-20261125/KembangPasir-dot/news-image-25nov/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-One image summing up the world's news of Wednesday 25 November 2026 — "The World in One Day": 35 stories across 6 regions, with the Iowa lead-azide blast, Tokyo's slide and Bitcoin below $60,000, and chess Game 2 leading the page. Entry for the make.fun bounty [news-image-20261125](https://make.fun/bounty/news-image-20261125) ($100, top 50).
+One image summing up the world's news of Wednesday 25 November 2026 — "The World in One Day": 35 stories across 6 regions, with the Iowa lead-azide blast, Tokyo's slide and Bitcoin below $60,000, and chess Game 2 leading the page. A large dotted world map marks where the 13 lead and medium stories happened, with the three lead cities labelled. Entry for the make.fun bounty [news-image-20261125](https://make.fun/bounty/news-image-20261125) ($100, top 50).
 
 ## Run it
 
