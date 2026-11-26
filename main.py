@@ -2,9 +2,12 @@
 """THE WORLD IN ONE DAY - Wednesday 25 November 2026.
 
 Rebuild (resubmit) of the make.fun news-image-20261125 entry.
-Revision 2: fact-checked, hero changed to the day's global story
-(the U.S. tariff salvo on 14 trading partners), every number
-re-verified against the original wires.
+Revision 3: Claude.ai optional fixes on top of revision 2 — taller
+dotted map with re-spaced pins (Gaza/Cairo/Sudan no longer overlap),
+Gold and Bitcoin moved to two small lines under the market bars,
+minimum bar width so the Dow +0.3% bar is visible, hero tariff rates
+re-verified against the USTR announcement (China up to 20%, Vietnam
+up to 35% — confirmed correct, unchanged).
 A clean, readability-first newspaper front page: one dominant hero
 four big key numbers, eleven compact numbered secondary stories grouped
 by region, a market bar chart under the hero as supporting evidence,
