@@ -2,11 +2,14 @@
 """THE WORLD IN ONE DAY - Wednesday 25 November 2026.
 
 Rebuild (resubmit) of the make.fun news-image-20261125 entry.
+Revision 2: fact-checked, hero changed to the day's global story
+(the U.S. tariff salvo on 14 trading partners), every number
+re-verified against the original wires.
 A clean, readability-first newspaper front page: one dominant hero
-(the US Army's controlled detonation of 5 tons of lead azide in Iowa),
-four big key numbers, twelve compact secondary stories grouped by region,
-a dotted world map and a simple market bar chart. Clean vector graphics
-only - no generated scene illustrations.
+four big key numbers, eleven compact numbered secondary stories grouped
+by region, a market bar chart under the hero as supporting evidence,
+and an enlarged dotted world map with numbered pins matching the
+stories. Clean vector graphics only - no generated scene illustrations.
 
 This program copies the rendered front page (entry.png, in the same
 directory as this script) to the output directory as entry.png.
