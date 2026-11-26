@@ -1,32 +1,66 @@
 #!/usr/bin/env python3
-"""Newspaper entry: copy the bundled entry.png into the output folder.
+"""THE WORLD IN ONE DAY - Wednesday 25 November 2026.
 
-Standard library only. The grader runs this with no network, so the
-image must come from the repository itself, next to this file. The
-output folder is created only if it is missing; it is never removed
-or recreated, because the grader mounts it writable on a read-only
-filesystem.
+Rebuild (resubmit) of the make.fun news-image-20261125 entry.
+A clean, readability-first newspaper front page: one dominant hero
+(the US Army's controlled detonation of 5 tons of lead azide in Iowa),
+four big key numbers, twelve compact secondary stories grouped by region,
+a dotted world map and a simple market bar chart. Clean vector graphics
+only - no generated scene illustrations.
+
+This program copies the rendered front page (entry.png, in the same
+directory as this script) to the output directory as entry.png.
+Python 3.13, standard library only. No network access. Deterministic:
+every run writes byte-identical output, and the copy is verified
+(size and SHA-256) before the program reports success.
 """
+
+import hashlib
 import os
-import shutil
 import sys
+
+ENTRY = "entry.png"
+
+
+def _sha256(data):
+    return hashlib.sha256(data).hexdigest()
 
 
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
-    src = os.path.join(here, "entry.png")
-    outdir = os.environ.get("MAKEFUN_OUTPUT_DIR", "out")
-    if not os.path.isdir(outdir):
-        os.makedirs(outdir, exist_ok=True)
-    dst = os.path.join(outdir, "entry.png")
-    shutil.copyfile(src, dst)
-    # Confirm the copy is complete: the output must be the same size
-    # as the bundled image, byte for byte.
-    if os.path.getsize(dst) != os.path.getsize(src):
-        print("entry.png copy incomplete: size mismatch", file=sys.stderr)
+    src = os.path.join(here, ENTRY)
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    dst = os.path.join(out_dir, ENTRY)
+
+    with open(src, "rb") as fh:
+        data = fh.read()
+    if not data:
+        print("error: %s is empty" % src, file=sys.stderr)
         return 1
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        print("error: %s is not a PNG file" % src, file=sys.stderr)
+        return 1
+    src_hash = _sha256(data)
+
+    with open(dst, "wb") as fh:
+        fh.write(data)
+
+    with open(dst, "rb") as fh:
+        copied = fh.read()
+    if len(copied) != len(data):
+        print(
+            "error: copied %d bytes, expected %d" % (len(copied), len(data)),
+            file=sys.stderr,
+        )
+        return 1
+    if _sha256(copied) != src_hash:
+        print("error: copied file hash mismatch", file=sys.stderr)
+        return 1
+
+    print("wrote %s (%d bytes)" % (dst, len(data)))
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())
